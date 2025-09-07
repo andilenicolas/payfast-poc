@@ -46,6 +46,7 @@ public class PaymentController : ControllerBase
     {
         try
         {
+            var request = HttpContext.Request;
             var formData = PayFastHelper.ParseFormData(Request.Form);
 
             var itn = new PayFastItn
@@ -100,14 +101,18 @@ public class PaymentController : ControllerBase
     }
 
     [HttpGet("return")]
-    public async Task<IActionResult> PaymentReturn([FromQuery] string payment_id, [FromQuery] string payment_status)
+    public async Task<IActionResult> PaymentReturn()
     {
         try
         {
-            _logger.LogInformation("Payment return for {PaymentId} with status {Status}", payment_id, payment_status);
+            // [FromQuery] string payment_id, [FromQuery] string payment_status
+            var request = HttpContext.Request;
+            var paymentId = request.Query["payment_id"];
+            var paymentStatus = request.Query["payment_status"];
+            _logger.LogInformation("Payment return for {PaymentId} with status {Status}", paymentId, paymentStatus);
 
             // Handle successful return from PayFast
-            var successHtml = GenerateSuccessPage(payment_id, payment_status);
+            var successHtml = GenerateSuccessPage(paymentId, paymentStatus);
             return Content(successHtml, "text/html");
         }
         catch (Exception ex)
@@ -117,13 +122,13 @@ public class PaymentController : ControllerBase
         }
     }
 
-    [HttpGet("cancel")]
-    public async Task<IActionResult> PaymentCancel()
+    [HttpGet("cancel/{paymentId?}")]
+    public async Task<IActionResult> PaymentCancel(string? paymentId)
     {
         try
         {
             var request = HttpContext.Request;
-            _logger.LogInformation("Payment cancelled for {PaymentId}", request.Query["payment_id"]);
+            _logger.LogInformation("Payment cancelled for {PaymentId}", paymentId);
 
             var cancelHtml = GenerateCancelPage(request.Query["payment_id"]);
             return Content(cancelHtml, "text/html");

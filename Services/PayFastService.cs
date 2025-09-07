@@ -17,26 +17,6 @@ public class PayFastService : IPayFastService
         _logger = logger;
     }
 
-    /*
-Example generated URL (for reference - Basic Form):
-
-//https://sandbox.payfast.co.za/eng/process?
-// merchant_id=10038631&
-// merchant_key=hach2qv6bf8oy&
-// return_url=https://payfast-success.requestcatcher.com/&
-// cancel_url=https://payfast-failed.requestcatcher.com/&
-// notify_url=https://payfast-notify.requestcatcher.com/&
-// name_first=Jonathan&
-// name_last=Herbert&
-// email_address=mkopset123@gmail.com&
-// m_payment_id=INV-2025-0001&
-// amount=1.00&
-// item_name=Membership%20(2%20Year)&
-// item_description=2y-Membership-Subscription
-// &signature=5634fcbab90cfe712e17b7cc51c795c0
-
-*/
-
     public async Task<string> CreatePaymentFormAsync(PaymentRequest request)
     {
         var formData = new List<KeyValuePair<string, string>>
@@ -44,14 +24,14 @@ Example generated URL (for reference - Basic Form):
             new("merchant_id", _config.MerchantId),
             new("merchant_key", _config.MerchantKey),
             new("return_url", _config.ReturnUrl),
-            new("cancel_url", _config.CancelUrl),
+            new("cancel_url", _config.CancelUrl+"/"+request.MerchantPaymentId),
             new("notify_url", _config.NotifyUrl),
             new("name_first", request.CustomerFirstName),
             new("name_last", request.CustomerLastName),
             new("email_address", request.CustomerEmail),
-            // new("cell_number", request.CustomerCell),
+            new("cell_number", request.CustomerCell),
             new("m_payment_id", request.MerchantPaymentId),
-            new("amount", "1.00"),
+            new("amount", FormatAmountForPayFast(request.Amount)),
             new("item_name", request.ItemName),
             new("item_description", request.ItemDescription)
         };
@@ -66,6 +46,12 @@ Example generated URL (for reference - Basic Form):
         var result = $"{actionUrl}?{string.Join("&", formData.Select(kvp => $"{kvp.Key}={PayFastUrlEncode(kvp.Value)}"))}";
 
         return GenerateHtmlForm(formData, actionUrl);
+    }
+
+    private static string FormatAmountForPayFast(decimal amount)
+    {
+        // PayFast requires amounts formatted with dot as decimal separator (e.g., "1.00", not "1,00")
+        return amount.ToString("F2", System.Globalization.CultureInfo.InvariantCulture);
     }
 
     public static string PayFastUrlEncode(string value)
