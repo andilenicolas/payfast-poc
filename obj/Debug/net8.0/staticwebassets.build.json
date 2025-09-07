@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "x7YAttpMtE7DK3S6uzGzKE8VmsS1bg+qaNjwwqjMfp8=",
+  "Source": "payfast.integration.poc",
+  "BasePath": "_content/payfast.integration.poc",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "payfast.integration.poc\\wwwroot",
+      "Source": "payfast.integration.poc",
+      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\",
+      "BasePath": "_content/payfast.integration.poc",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "SourceId": "payfast.integration.poc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\",
+      "BasePath": "_content/payfast.integration.poc",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lrg0s5yzzf",
+      "Integrity": "H/t6ch+vBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "SourceId": "payfast.integration.poc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\",
+      "BasePath": "_content/payfast.integration.poc",
+      "RelativePath": "test-payment#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qmuvljoaum",
+      "Integrity": "0g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\test-payment.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3024"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H/t6ch+vBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 06 Sep 2025 10:49:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H/t6ch+vBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE="
+        }
+      ]
+    },
+    {
+      "Route": "index.lrg0s5yzzf.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3024"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H/t6ch+vBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 06 Sep 2025 10:49:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lrg0s5yzzf"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H/t6ch+vBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE="
+        }
+      ]
+    },
+    {
+      "Route": "test-payment.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 06 Sep 2025 10:49:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o="
+        }
+      ]
+    },
+    {
+      "Route": "test-payment.qmuvljoaum.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 06 Sep 2025 10:49:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qmuvljoaum"
+        },
+        {
+          "Name": "label",
+          "Value": "test-payment.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o="
+        }
+      ]
+    }
+  ]
+}

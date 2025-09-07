@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\payfast.integration.poc.props" />
+</Project>

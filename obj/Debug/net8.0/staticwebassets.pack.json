@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "PackagePath": "staticwebassets\\test-payment.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.payfast.integration.poc.props",
+      "PackagePath": "build\\payfast.integration.poc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.payfast.integration.poc.props",
+      "PackagePath": "buildMultiTargeting\\payfast.integration.poc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.payfast.integration.poc.props",
+      "PackagePath": "buildTransitive\\payfast.integration.poc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.payfast.integration.poc.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.payfast.integration.poc.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

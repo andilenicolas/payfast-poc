@@ -1,0 +1,6 @@
+@payfast.integration.poc_HostAddress = http://localhost:5209
+
+GET {{payfast.integration.poc_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

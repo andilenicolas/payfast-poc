@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayFast Integration POC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .link-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #007bff;
+        }
+        .link-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .link-card a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+        .description {
+            color: #666;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PayFast Integration POC</h1>
+        <p>This is a Proof of Concept for PayFast payment integration using ASP.NET Core Web API.</p>
+        
+        <div class="links">
+            <div class="link-card">
+                <h3><a href="/swagger">API Documentation (Swagger)</a></h3>
+                <p class="description">View and test the API endpoints using Swagger UI</p>
+            </div>
+            
+            <div class="link-card">
+                <h3><a href="/test-payment.html">Test Payment Form</a></h3>
+                <p class="description">Manual test form to initiate a PayFast payment</p>
+            </div>
+            
+            <div class="link-card">
+                <h3><a href="/api/payment/test">Test API Endpoint</a></h3>
+                <p class="description">Simple test endpoint to verify the API is working</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 20px; background-color: #fff3cd; border-radius: 6px; border-left: 4px solid #ffc107;">
+            <h4>Development Notes:</h4>
+            <ul>
+                <li>This POC uses PayFast sandbox environment in development</li>
+                <li>Test credentials are already configured for development</li>
+                <li>Check the browser console and application logs for debugging information</li>
+                <li>The ITN (Instant Transaction Notification) endpoint requires a public URL for PayFast to reach</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/payfast.integration.poc/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-H/t6ch\u002BvBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3024"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022H/t6ch\u002BvBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE=\u0022"},{"Name":"Last-Modified","Value":"Sat, 06 Sep 2025 10:49:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/payfast.integration.poc/index.lrg0s5yzzf.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"lrg0s5yzzf"},{"Name":"integrity","Value":"sha256-H/t6ch\u002BvBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE="},{"Name":"label","Value":"_content/payfast.integration.poc/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3024"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022H/t6ch\u002BvBg/YVMR2lAjj77ZVymfD1mMuMJqZ8UZuczE=\u0022"},{"Name":"Last-Modified","Value":"Sat, 06 Sep 2025 10:49:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/payfast.integration.poc/test-payment.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\test-payment.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4984"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00220g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o=\u0022"},{"Name":"Last-Modified","Value":"Sat, 06 Sep 2025 10:49:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/payfast.integration.poc/test-payment.qmuvljoaum.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\test-payment.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qmuvljoaum"},{"Name":"integrity","Value":"sha256-0g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o="},{"Name":"label","Value":"_content/payfast.integration.poc/test-payment.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4984"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00220g25LUfA9VYCnD83pP/gQ2W7rJfCNhOaIvlQZEJmh0o=\u0022"},{"Name":"Last-Modified","Value":"Sat, 06 Sep 2025 10:49:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

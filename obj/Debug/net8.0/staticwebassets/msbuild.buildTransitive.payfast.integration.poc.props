@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\payfast.integration.poc.props" />
+</Project>
