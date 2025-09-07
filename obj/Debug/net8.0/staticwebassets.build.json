@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x7YAttpMtE7DK3S6uzGzKE8VmsS1bg+qaNjwwqjMfp8=",
+  "Hash": "HLC52QXS09RZqo8uFR2zWB+C78cuutXcI+wELwqU6RI=",
   "Source": "payfast.integration.poc",
   "BasePath": "_content/payfast.integration.poc",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "payfast.integration.poc\\wwwroot",
       "Source": "payfast.integration.poc",
-      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\",
       "BasePath": "_content/payfast.integration.poc",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\index.html",
       "SourceId": "payfast.integration.poc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\",
       "BasePath": "_content/payfast.integration.poc",
       "RelativePath": "index#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "Identity": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\test-payment.html",
       "SourceId": "payfast.integration.poc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\",
       "BasePath": "_content/payfast.integration.poc",
       "RelativePath": "test-payment#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -62,7 +62,7 @@
   "Endpoints": [
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -99,7 +99,7 @@
     },
     {
       "Route": "index.lrg0s5yzzf.html",
-      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -144,7 +144,7 @@
     },
     {
       "Route": "test-payment.html",
-      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\test-payment.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -181,7 +181,7 @@
     },
     {
       "Route": "test-payment.qmuvljoaum.html",
-      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "AssetFile": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\test-payment.html",
       "Selectors": [],
       "ResponseHeaders": [
         {

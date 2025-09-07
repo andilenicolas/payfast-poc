@@ -5,16 +5,16 @@ namespace payfast.integration.poc.Services;
 
 public static class PayFastHelper
 {
-    public static string CreateSignature(Dictionary<string, string> data, string passphrase = "")
+    public static string CreateSignature(IEnumerable<KeyValuePair<string, string>> data, string passphrase = "")
     {
-        var dataString = string.Join("&", data
-            .Where(kvp => !string.IsNullOrEmpty(kvp.Value))
-            .OrderBy(kvp => kvp.Key)
-            .Select(kvp => $"{kvp.Key}={Uri.EscapeDataString(kvp.Value)}"));
+        // Only include non-blank variables, preserving order
+        var filtered = data.Where(kvp => !string.IsNullOrEmpty(kvp.Value));
+        var dataString = string.Join("&", filtered
+            .Select(kvp => $"{kvp.Key}={PayFastUrlEncode(kvp.Value)}"));
 
         if (!string.IsNullOrEmpty(passphrase))
         {
-            dataString += $"&passphrase={Uri.EscapeDataString(passphrase)}";
+            dataString += $"&passphrase={PayFastUrlEncode(passphrase)}";
         }
 
         using var md5 = MD5.Create();
@@ -22,7 +22,22 @@ public static class PayFastHelper
         return Convert.ToHexString(hashBytes).ToLower();
     }
 
-    public static bool ValidateSignature(Dictionary<string, string> data, string receivedSignature, string passphrase = "")
+    public static string PayFastUrlEncode(string value)
+    {
+        if (value == null) return string.Empty;
+        var encoded = Uri.EscapeDataString(value)
+            .Replace("!", "%21")
+            .Replace("'", "%27")
+            .Replace("(", "%28")
+            .Replace(")", "%29")
+            .Replace("*", "%2A")
+            .Replace("~", "%7E")
+            .Replace("%20", "+");
+        return encoded;
+    }
+
+
+    public static bool ValidateSignature(IEnumerable<KeyValuePair<string, string>> data, string receivedSignature, string passphrase = "")
     {
         var calculatedSignature = CreateSignature(data, passphrase);
         return calculatedSignature.Equals(receivedSignature, StringComparison.OrdinalIgnoreCase);

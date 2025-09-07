@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("payfast.integration.poc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7416e27d01ea2c4d93d61c45d06e1c854df4a2dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1323fbca3470ce18fb485af17e5795df08ea1208")]
 [assembly: System.Reflection.AssemblyProductAttribute("payfast.integration.poc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("payfast.integration.poc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

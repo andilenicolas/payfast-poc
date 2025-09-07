@@ -17,33 +17,69 @@ public class PayFastService : IPayFastService
         _logger = logger;
     }
 
+    /*
+Example generated URL (for reference - Basic Form):
+
+//https://sandbox.payfast.co.za/eng/process?
+// merchant_id=10038631&
+// merchant_key=hach2qv6bf8oy&
+// return_url=https://payfast-success.requestcatcher.com/&
+// cancel_url=https://payfast-failed.requestcatcher.com/&
+// notify_url=https://payfast-notify.requestcatcher.com/&
+// name_first=Jonathan&
+// name_last=Herbert&
+// email_address=mkopset123@gmail.com&
+// m_payment_id=INV-2025-0001&
+// amount=1.00&
+// item_name=Membership%20(2%20Year)&
+// item_description=2y-Membership-Subscription
+// &signature=5634fcbab90cfe712e17b7cc51c795c0
+
+*/
+
     public async Task<string> CreatePaymentFormAsync(PaymentRequest request)
     {
-        var formData = new Dictionary<string, string>
+        var formData = new List<KeyValuePair<string, string>>
         {
-            ["merchant_id"] = _config.MerchantId,
-            ["merchant_key"] = _config.MerchantKey,
-            ["return_url"] = _config.ReturnUrl,
-            ["cancel_url"] = _config.CancelUrl,
-            ["notify_url"] = _config.NotifyUrl,
-            ["name_first"] = request.CustomerFirstName,
-            ["name_last"] = request.CustomerLastName,
-            ["email_address"] = request.CustomerEmail,
-            ["cell_number"] = request.CustomerCell,
-            ["m_payment_id"] = request.MerchantPaymentId,
-            ["amount"] = request.Amount.ToString("F2"),
-            ["item_name"] = request.ItemName,
-            ["item_description"] = request.ItemDescription
+            new("merchant_id", _config.MerchantId),
+            new("merchant_key", _config.MerchantKey),
+            new("return_url", _config.ReturnUrl),
+            new("cancel_url", _config.CancelUrl),
+            new("notify_url", _config.NotifyUrl),
+            new("name_first", request.CustomerFirstName),
+            new("name_last", request.CustomerLastName),
+            new("email_address", request.CustomerEmail),
+            // new("cell_number", request.CustomerCell),
+            new("m_payment_id", request.MerchantPaymentId),
+            new("amount", "1.00"),
+            new("item_name", request.ItemName),
+            new("item_description", request.ItemDescription)
         };
 
         var signature = PayFastHelper.CreateSignature(formData, _config.Passphrase);
-        formData["signature"] = signature;
+        formData.Add(new KeyValuePair<string, string>("signature", signature));
 
         var actionUrl = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development"
             ? _config.SandboxUrl
             : _config.BaseUrl;
 
+        var result = $"{actionUrl}?{string.Join("&", formData.Select(kvp => $"{kvp.Key}={PayFastUrlEncode(kvp.Value)}"))}";
+
         return GenerateHtmlForm(formData, actionUrl);
+    }
+
+    public static string PayFastUrlEncode(string value)
+    {
+        if (value == null) return string.Empty;
+        var encoded = Uri.EscapeDataString(value)
+            .Replace("!", "%21")
+            .Replace("'", "%27")
+            .Replace("(", "%28")
+            .Replace(")", "%29")
+            .Replace("*", "%2A")
+            .Replace("~", "%7E")
+            .Replace("%20", "+");
+        return encoded;
     }
 
     public async Task<bool> ValidateItnAsync(PayFastItn itn)
@@ -93,7 +129,7 @@ public class PayFastService : IPayFastService
         return true;
     }
 
-    private string GenerateHtmlForm(Dictionary<string, string> formData, string actionUrl)
+    private string GenerateHtmlForm(IEnumerable<KeyValuePair<string, string>> formData, string actionUrl)
     {
         var html = new StringBuilder();
         html.AppendLine("<!DOCTYPE html>");
@@ -104,7 +140,7 @@ public class PayFastService : IPayFastService
 
         foreach (var kvp in formData)
         {
-            html.AppendLine($"<input type='hidden' name='{kvp.Key}' value='{kvp.Value}' />");
+            html.AppendLine($"<input type='hidden' name='{kvp.Key}' value='{System.Net.WebUtility.HtmlEncode(kvp.Value)}' />");
         }
 
         html.AppendLine("<input type='submit' value='Pay Now' />");

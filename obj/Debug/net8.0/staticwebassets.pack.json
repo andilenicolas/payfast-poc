@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\index.html",
+      "Id": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\payfast.integration.poc\\wwwroot\\test-payment.html",
+      "Id": "C:\\Users\\andil\\Documents\\Projects\\POC\\payfast\\remote\\payfast-poc\\wwwroot\\test-payment.html",
       "PackagePath": "staticwebassets\\test-payment.html"
     },
     {

@@ -118,13 +118,14 @@ public class PaymentController : ControllerBase
     }
 
     [HttpGet("cancel")]
-    public async Task<IActionResult> PaymentCancel([FromQuery] string payment_id)
+    public async Task<IActionResult> PaymentCancel()
     {
         try
         {
-            _logger.LogInformation("Payment cancelled for {PaymentId}", payment_id);
+            var request = HttpContext.Request;
+            _logger.LogInformation("Payment cancelled for {PaymentId}", request.Query["payment_id"]);
 
-            var cancelHtml = GenerateCancelPage(payment_id);
+            var cancelHtml = GenerateCancelPage(request.Query["payment_id"]);
             return Content(cancelHtml, "text/html");
         }
         catch (Exception ex)
